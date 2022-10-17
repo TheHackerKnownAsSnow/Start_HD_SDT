@@ -96,7 +96,7 @@ namespace Start_HD_SDT_1._3
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            this.Width = materialAffinityComboBox.Width * 3;
+            this.Width = materialAffinityComboBox.Width * 2;
             this.Height = materialAffinityComboBox.Height * 7;
 
             materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
@@ -107,10 +107,9 @@ namespace Start_HD_SDT_1._3
 
             materialResolutionComboBox.SelectedIndex = Settings.Default.resolution;
 
-            materialButton4.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialButton4.Width / 2) + 48, (materialTabControl1.Height / 3) - 16 - materialButton4.Height);
-            materialButton5.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialButton5.Width / 2) + 48, (materialTabControl1.Height / 3) + 48 - 16 - materialButton5.Height);
-            materialButton6.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialButton6.Width / 2) + 48, (materialTabControl1.Height / 3) + 96 - 16 - materialButton6.Height);
-
+            materialButton4.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton4.Width/2), (tabPage1.Height / 7));
+            materialButton5.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton5.Width / 2), (tabPage1.Height / 7) + 48);
+            materialButton6.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton6.Width / 2), (tabPage1.Height / 7) + 96);
 
             if (Settings.Default.affinity == -1)
 
@@ -134,6 +133,10 @@ namespace Start_HD_SDT_1._3
             materialCheckbox1.Checked = Settings.Default.priority;
 
             Settings.Default.Save();
+
+            DrawerIsOpen = true;
+            DrawerIsOpen = false;
+
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
@@ -230,7 +233,7 @@ namespace Start_HD_SDT_1._3
         }
         public static int GetWindowsScaling()
         {
-            return (int)(100 * Screen.PrimaryScreen.WorkingArea.Width / Screen.PrimaryScreen.Bounds.Width);
+            return (int)(100 * Screen.PrimaryScreen.Bounds.Width / SystemParameters.PrimaryScreenWidth);
         }
 
         public void MoveWindowToCenter()
@@ -463,14 +466,14 @@ namespace Start_HD_SDT_1._3
         private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
         {
             
-            this.Width = materialAffinityComboBox.Width * 3;
-            this.Height = materialAffinityComboBox.Height * 6;
-
-            materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
-            materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
-
-            materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
-            materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
+           // this.Width = materialAffinityComboBox.Width * 3;
+           // this.Height = materialAffinityComboBox.Height * 6;
+           //
+           // materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
+           // materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
+           //
+           // materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
+           // materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
 
         }
 
@@ -481,8 +484,72 @@ namespace Start_HD_SDT_1._3
 
         private void Form1_DpiChangedAfterParent(object sender, EventArgs e)
         {
-            this.Width = materialAffinityComboBox.Width * 3;
-            this.Height = materialAffinityComboBox.Height * 6;
+            //this.Width = materialAffinityComboBox.Width * 3;
+            //this.Height = materialAffinityComboBox.Height * 6;
+            //
+            //materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
+            //materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
+            //
+            //materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
+            //materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
+
+        }
+
+        private void materialMultiLineTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            //this.Width = materialAffinityComboBox.Width * 3;
+            //this.Height = materialAffinityComboBox.Height * 6;
+            //
+            //materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
+            //materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
+            //
+            //materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
+            //materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
+
+        }
+
+        private void Form1_MouseLeave(object sender, EventArgs e)
+        {
+            //this.Width = materialAffinityComboBox.Width * 3;
+            //this.Height = materialAffinityComboBox.Height * 6;
+            //
+            //materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
+            //materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
+            //
+            //materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
+            //materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
+
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            this.Width = materialAffinityComboBox.Width * 2;
+            this.Height = materialAffinityComboBox.Height * 7;
+
+
+            materialButton4.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton4.Width / 2), (tabPage1.Height / 7));
+            materialButton5.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton5.Width / 2), (tabPage1.Height / 7) + 48);
+            materialButton6.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton6.Width / 2), (tabPage1.Height / 7) + 96);
+                                                                                     
+            DrawerIsOpen = true;
+            DrawerIsOpen = false;
+
+        }
+
+        private void materialTabControl1_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_DpiChanged(object sender, DpiChangedEventArgs e)
+        {
+            this.Width = materialAffinityComboBox.Width * 2;
+            this.Height = materialAffinityComboBox.Height * 7;
 
             materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
             materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
@@ -490,10 +557,12 @@ namespace Start_HD_SDT_1._3
             materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
             materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
 
-        }
+            materialResolutionComboBox.SelectedIndex = Settings.Default.resolution;
 
-        private void materialMultiLineTextBox1_TextChanged(object sender, EventArgs e)
-        {
+
+            materialButton4.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton4.Width / 2), (tabPage1.Height / 7));
+            materialButton5.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton5.Width / 2), (tabPage1.Height / 7) + 48);
+            materialButton6.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton6.Width / 2), (tabPage1.Height / 7) + 96);
 
         }
     }

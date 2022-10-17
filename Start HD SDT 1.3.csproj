@@ -12,6 +12,7 @@
     <FileVersion>1.3</FileVersion>
     <ApplicationIcon>7211.ico</ApplicationIcon>
     <Title>Start HD SDT 1.3</Title>
+    <Platforms>AnyCPU;x86;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
