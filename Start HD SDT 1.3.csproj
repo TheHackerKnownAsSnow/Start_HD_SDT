@@ -7,13 +7,20 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
     <PackageIcon>7211.ico</PackageIcon>
     <FileVersion>1.3</FileVersion>
     <ApplicationIcon>7211.ico</ApplicationIcon>
     <Title>Start HD SDT 1.3</Title>
     <Platforms>AnyCPU;x86;x64</Platforms>
+    <StartupObject>Start_HD_SDT_1._3.Program</StartupObject>
+    <Configurations>Debug;Release;Main</Configurations>
+    <PlatformTarget>x86</PlatformTarget>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="app1.manifest" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="7211.ico" />
@@ -28,7 +35,6 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
-    <PackageReference Include="PresentationFramework" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

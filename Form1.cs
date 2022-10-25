@@ -233,7 +233,22 @@ namespace Start_HD_SDT_1._3
         }
         public static int GetWindowsScaling()
         {
-            return (int)(100 * Screen.PrimaryScreen.Bounds.Width / SystemParameters.PrimaryScreenWidth);
+
+            int DPI = Int32.Parse((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ThemeManager","LastLoadedDPI", "96"));
+            var currentDPI = (int)Registry.GetValue("HKEY_CURRENT_USER\\Control Panel\\Desktop", "LogPixels", 96);
+            //var scale = 96 / (float)currentDPI;
+
+            if (System.OperatingSystem.IsWindowsVersionAtLeast(10,0,22000,1))
+            {
+                return DPI;
+            }
+            else if ((System.OperatingSystem.IsWindowsVersionAtLeast(10)))
+            {
+                return currentDPI;
+            }
+            MessageBox.Show("Windows 7 is not supported, Error");
+            return 0;
+            
         }
 
         public void MoveWindowToCenter()
@@ -271,27 +286,27 @@ namespace Start_HD_SDT_1._3
 
             switch (GetWindowsScaling())
             {
-                case (int)100:
+                case (int)96:
                     xxx = 16;
                     yyy = 59;
                     Settings.Default.scale = 100;
                     break;
-                case (int)125:
+                case (int)12:
                     xxx += 2;
                     yyy += 23;
                     Settings.Default.scale = 125;
                     break;
-                case (int)150:
+                case (int)144:
                     xxx += 6;
                     yyy += 27;
                     Settings.Default.scale = 150;
                     break;
-                case (int)175:
+                case (int)192:
                     xxx += 8;
                     yyy += 39;
                     Settings.Default.scale = 175;
                     break;
-                case (int)200:
+                case (int)240:
                     xxx += 10;
                     yyy += 51;
                     Settings.Default.scale = 200;
