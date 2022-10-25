@@ -96,7 +96,8 @@ namespace Start_HD_SDT_1._3
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            this.Width = materialAffinityComboBox.Width * 2;
+
+            this.Width = (materialAffinityComboBox.Width * 2) + 80;
             this.Height = materialAffinityComboBox.Height * 7;
 
             materialAffinityComboBox.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2), materialAffinityComboBox.Height);
@@ -543,7 +544,7 @@ namespace Start_HD_SDT_1._3
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            this.Width = materialAffinityComboBox.Width * 2;
+            this.Width = (materialAffinityComboBox.Width * 2) + 80;
             this.Height = materialAffinityComboBox.Height * 7;
 
 
