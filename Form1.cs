@@ -104,7 +104,8 @@ namespace Start_HD_SDT_1._3
             materialResolutionComboBox.Location = new System.Drawing.Point(materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2), (materialAffinityComboBox.Height + 48));
 
             materialCheckbox1.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height);
-            materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 48);
+            materialCheckbox2.Location = new System.Drawing.Point((materialTabControl1.Width / 3) - (materialAffinityComboBox.Width / 2) + materialAffinityComboBox.Width + 16, materialAffinityComboBox.Height + 48);
+            materialButton2.Location = new System.Drawing.Point((materialTabControl1.Width / 3 - (materialResolutionComboBox.Width / 2)) + materialResolutionComboBox.Width + 16, materialAffinityComboBox.Height + 96);
 
             materialResolutionComboBox.SelectedIndex = Settings.Default.resolution;
 
@@ -132,6 +133,7 @@ namespace Start_HD_SDT_1._3
             materialAffinityComboBox.SelectedIndex = Settings.Default.affinity;
 
             materialCheckbox1.Checked = Settings.Default.priority;
+            materialCheckbox2.Checked = Settings.Default.DpiAware;
 
             Settings.Default.Save();
 
@@ -580,6 +582,54 @@ namespace Start_HD_SDT_1._3
             materialButton5.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton5.Width / 2), (tabPage1.Height / 7) + 48);
             materialButton6.Location = new System.Drawing.Point((tabPage1.Width / 2) - (materialButton6.Width / 2), (tabPage1.Height / 7) + 96);
 
+        }
+
+        private void materialCheckbox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.DpiAware = materialCheckbox2.Checked;
+            Settings.Default.Save();
+
+            switch (Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", Application.ExecutablePath, null))
+            {
+                case null:
+                    if (Settings.Default.DpiAware)
+                    {
+                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", Application.ExecutablePath, "HIGHDPIAWARE");
+                        MessageBox.Show("Restart required for Dpi changes to take effect", "Message", MessageBoxButtons.OK);
+                    }
+                    // code block
+                    break;
+                case "HIGHDPIAWARE":
+                    if (!(Settings.Default.DpiAware))
+                    {
+                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", Application.ExecutablePath, "DPIUNAWARE");
+                        MessageBox.Show("Restart required for Dpi changes to take effect", "Message", MessageBoxButtons.OK);
+                    }
+                    break;
+                case "DPIUNAWARE":
+                    // code block
+                    if (Settings.Default.DpiAware)
+                    {
+                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", Application.ExecutablePath, "HIGHDPIAWARE");
+                        MessageBox.Show("Restart required for Dpi changes to take effect", "Message", MessageBoxButtons.OK);
+                    }
+                    break;
+                default:
+                    if (Settings.Default.DpiAware)
+                    {
+                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", Application.ExecutablePath, "HIGHDPIAWARE");
+                        MessageBox.Show("Restart required for Dpi changes to take effect", "Message", MessageBoxButtons.OK);
+                    }
+                    break;
+
+
+            }
+
+        }
+
+        private void materialCheckbox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

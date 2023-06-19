@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialResolutionComboBox = new MaterialSkin.Controls.MaterialComboBox();
@@ -59,39 +60,58 @@
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList2;
-            this.materialTabControl1.Location = new System.Drawing.Point(0, 18);
+            this.materialTabControl1.Location = new System.Drawing.Point(0, 22);
             this.materialTabControl1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(519, 302);
+            this.materialTabControl1.Size = new System.Drawing.Size(649, 378);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.Enter += new System.EventHandler(this.materialTabControl1_Enter);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.materialCheckbox2);
             this.tabPage1.Controls.Add(this.materialCheckbox1);
             this.tabPage1.Controls.Add(this.materialButton2);
             this.tabPage1.Controls.Add(this.materialResolutionComboBox);
             this.tabPage1.Controls.Add(this.materialAffinityComboBox);
             this.tabPage1.Controls.Add(this.materialButton1);
             this.tabPage1.ImageKey = "Asset 1@4x.png";
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.tabPage1.Size = new System.Drawing.Size(511, 267);
+            this.tabPage1.Size = new System.Drawing.Size(641, 340);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckbox2
+            // 
+            this.materialCheckbox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.materialCheckbox2.AutoSize = true;
+            this.materialCheckbox2.Depth = 0;
+            this.materialCheckbox2.Location = new System.Drawing.Point(459, 152);
+            this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox2.Name = "materialCheckbox2";
+            this.materialCheckbox2.ReadOnly = false;
+            this.materialCheckbox2.Ripple = true;
+            this.materialCheckbox2.Size = new System.Drawing.Size(103, 37);
+            this.materialCheckbox2.TabIndex = 5;
+            this.materialCheckbox2.Text = "DpiAware";
+            this.materialCheckbox2.UseVisualStyleBackColor = true;
+            this.materialCheckbox2.CheckedChanged += new System.EventHandler(this.materialCheckbox2_CheckedChanged);
             // 
             // materialCheckbox1
             // 
             this.materialCheckbox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCheckbox1.AutoSize = true;
             this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(367, 86);
+            this.materialCheckbox1.Location = new System.Drawing.Point(459, 108);
             this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -102,6 +122,7 @@
             this.materialCheckbox1.TabIndex = 4;
             this.materialCheckbox1.Text = "High Priority";
             this.materialCheckbox1.UseVisualStyleBackColor = true;
+            this.materialCheckbox1.CheckedChanged += new System.EventHandler(this.materialCheckbox1_CheckedChanged);
             // 
             // materialButton2
             // 
@@ -111,8 +132,8 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(417, 136);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.materialButton2.Location = new System.Drawing.Point(521, 207);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -150,12 +171,12 @@
             "16:9 | 1600×900",
             "16:9 | 1920×1080",
             "16:9 | 2560x1440"});
-            this.materialResolutionComboBox.Location = new System.Drawing.Point(5, 128);
+            this.materialResolutionComboBox.Location = new System.Drawing.Point(6, 160);
             this.materialResolutionComboBox.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.materialResolutionComboBox.MaxDropDownItems = 4;
             this.materialResolutionComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.materialResolutionComboBox.Name = "materialResolutionComboBox";
-            this.materialResolutionComboBox.Size = new System.Drawing.Size(203, 35);
+            this.materialResolutionComboBox.Size = new System.Drawing.Size(253, 35);
             this.materialResolutionComboBox.StartIndex = 0;
             this.materialResolutionComboBox.TabIndex = 2;
             this.materialResolutionComboBox.UseTallSize = false;
@@ -211,12 +232,12 @@
             "CPU 30",
             "CPU 31",
             "CPU 32"});
-            this.materialAffinityComboBox.Location = new System.Drawing.Point(5, 72);
+            this.materialAffinityComboBox.Location = new System.Drawing.Point(6, 90);
             this.materialAffinityComboBox.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.materialAffinityComboBox.MaxDropDownItems = 4;
             this.materialAffinityComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.materialAffinityComboBox.Name = "materialAffinityComboBox";
-            this.materialAffinityComboBox.Size = new System.Drawing.Size(203, 35);
+            this.materialAffinityComboBox.Size = new System.Drawing.Size(253, 35);
             this.materialAffinityComboBox.StartIndex = 0;
             this.materialAffinityComboBox.TabIndex = 1;
             this.materialAffinityComboBox.UseTallSize = false;
@@ -231,12 +252,12 @@
             this.materialButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(1, 229);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.materialButton1.Location = new System.Drawing.Point(1, 302);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(509, 36);
+            this.materialButton1.Size = new System.Drawing.Size(639, 36);
             this.materialButton1.TabIndex = 0;
             this.materialButton1.Text = "Play HD SDT";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -251,11 +272,11 @@
             this.tabPage2.Controls.Add(this.materialButton4);
             this.tabPage2.Controls.Add(this.materialButton3);
             this.tabPage2.ImageKey = "Asset 2@4x.png";
-            this.tabPage2.Location = new System.Drawing.Point(4, 31);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.tabPage2.Size = new System.Drawing.Size(511, 267);
+            this.tabPage2.Size = new System.Drawing.Size(641, 340);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -268,8 +289,8 @@
             this.materialButton6.Depth = 0;
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(175, 142);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.materialButton6.Location = new System.Drawing.Point(219, 178);
+            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
             this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -289,8 +310,8 @@
             this.materialButton5.Depth = 0;
             this.materialButton5.HighEmphasis = true;
             this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(176, 86);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.materialButton5.Location = new System.Drawing.Point(220, 108);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton5.Name = "materialButton5";
             this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -310,8 +331,8 @@
             this.materialButton4.Depth = 0;
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(179, 26);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.materialButton4.Location = new System.Drawing.Point(224, 32);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
             this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -331,12 +352,12 @@
             this.materialButton3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(1, 229);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.materialButton3.Location = new System.Drawing.Point(1, 302);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
             this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(509, 36);
+            this.materialButton3.Size = new System.Drawing.Size(639, 36);
             this.materialButton3.TabIndex = 0;
             this.materialButton3.Text = "View Settings";
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -348,10 +369,10 @@
             // 
             this.tabPage3.Controls.Add(this.materialMultiLineTextBox1);
             this.tabPage3.ImageKey = "Asset 4@4x.png";
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(511, 267);
+            this.tabPage3.Size = new System.Drawing.Size(641, 340);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -365,11 +386,11 @@
             this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialMultiLineTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.materialMultiLineTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.materialMultiLineTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
             this.materialMultiLineTextBox1.ReadOnly = true;
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(511, 267);
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(641, 340);
             this.materialMultiLineTextBox1.TabIndex = 0;
             this.materialMultiLineTextBox1.Text = resources.GetString("materialMultiLineTextBox1.Text");
             this.materialMultiLineTextBox1.ZoomFactor = 0.7F;
@@ -387,9 +408,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 322);
+            this.ClientSize = new System.Drawing.Size(650, 402);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerBackgroundWithAccent = true;
             this.DrawerIndicatorWidth = 6;
@@ -402,7 +423,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(0, 18, 1, 2);
+            this.Padding = new System.Windows.Forms.Padding(0, 22, 1, 2);
             this.Sizable = false;
             this.Text = "Start HD SDT 1.3";
             this.MinimumSizeChanged += new System.EventHandler(this.Form1_MinimumSizeChanged);
@@ -440,5 +461,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private ImageList imageList2;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
     }
 }

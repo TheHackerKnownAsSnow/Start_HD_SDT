@@ -94,5 +94,17 @@ namespace Start_HD_SDT_1._3 {
                 this["scale"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DpiAware {
+            get {
+                return ((bool)(this["DpiAware"]));
+            }
+            set {
+                this["DpiAware"] = value;
+            }
+        }
     }
 }
