@@ -18,3 +18,15 @@ Previously the flash player's outer window bounds was set, now the inner game ar
 
 Fixes a Windows scaling issue, when the desktop is scaled above 100%, with the Flash player that caused blurry edges and text
 This is done by setting the following regestry key: @"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" "Application path" "HIGHDPIAWARE"
+
+# Build instructions
+
+Only requires this nuget package
+https://www.nuget.org/packages/MaterialSkin.2/2.3.1?_src=template
+
+Publish settings:
+- Release x86
+- net6.0-windows
+- Self-contained
+- win-x86
+- File publish: Produce single file
